@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI-GreenLand | Страна Экспертов</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        /* Light Mode Colors (Default) */
+        --color-deep: #F8FAFC; /* Slate 50 */
+        --color-surface: #FFFFFF; /* White */
+        --text-main: #0F172A; /* Slate 900 */
+        --text-muted: #64748B; /* Slate 500 */
+      }
+      
+      .dark {
+        /* Dark Mode Colors */
+        --color-deep: #0B1120;
+        --color-surface: #162032;
+        --text-main: #E2E8F0;
+        --text-muted: #94A3B8;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--color-deep);
+        color: var(--text-main);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Orbitron', sans-serif;
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--color-deep); 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #00BFFF; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #FFD700; 
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              greenland: {
+                yellow: '#FFD700',
+                red: '#C8102E',
+                ice: '#00BFFF',
+                // Using CSS variables for theming
+                deep: 'var(--color-deep)',
+                surface: 'var(--color-surface)'
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Orbitron', 'sans-serif'],
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'fadeIn': 'fadeIn 0.5s ease-out forwards',
+              'scan': 'scan 4s linear infinite',
+              'shimmer': 'shimmer 3s linear infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              scan: {
+                '0%': { top: '-20%' },
+                '100%': { top: '120%' },
+              },
+              shimmer: {
+                '0%': { backgroundPosition: '200% 0' },
+                '100%': { backgroundPosition: '-200% 0' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "html2canvas": "https://esm.sh/html2canvas@1.4.1",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
